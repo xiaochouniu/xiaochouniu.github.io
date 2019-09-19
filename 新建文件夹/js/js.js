@@ -4,4 +4,5 @@ $('.next').on({click:function () {
     $('.showcase').show();
     $(this).hide();
     $('.nexttwo').show();
+    $('#abiaoqian').show()
 }})

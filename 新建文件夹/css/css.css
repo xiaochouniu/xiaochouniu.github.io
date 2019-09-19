@@ -25,3 +25,13 @@
 .nexttwo {
   display: none;
 }
+#abiaoqian {
+  display: none;
+  background-color: rgba(255, 0, 0, 0);
+  width: 181px;
+  height: 159px;
+  position: absolute;
+  bottom :40px;
+  right: 6px;
+  z-index: 9999999999999999999999999999999;
+}
