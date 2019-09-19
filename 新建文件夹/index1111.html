@@ -1,57 +1,143 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>爱心雨</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>爱心雨</title>
 
-<style>
-body {
-	overflow: hidden;
-	margin: 0 auto;
-	background: url('img/16.jpg') no-repeat; 
-	background-attachment:fixed;
-	background-size:cover; 
-	-moz-background-size:cover; 
-	-webkit-background-size:cover;
-}
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
 
-.snowfall-flakes:before {
-	content: "";
-	/*绝对定位*/
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 10px;
-	height: 16px;
-	transform: rotate(-45deg);
-	background-color: red;
-	border-radius: 5px 5px 1px 1px;
-}
+		.wrap {
+			width: 1000px;
+			text-align: center;
+			margin: 100px auto 0;
+		}
 
-.snowfall-flakes:after {
-	content: ""; /*激活伪元素的必要因素*/
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 10px;
-	height: 16px;
-	transform: translateX(4.3px) rotate(45deg);
-	background-color: red;
-	border-radius: 5px 5px 1px 1px;
-}
-</style>
+		.wrap h1 {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 300;
+		}
+
+		.word {
+			font-weight: 700;
+		}
+
+		.typed-cursor {
+			opacity: 1;
+			display: none;
+		}
+
+		.saySection {
+			margin-top: 50px;
+		}
+
+		.saySection input {
+			font-size: 30px;
+		}
+
+		.saySection .txtSay {
+			padding-left: 10px;
+		}
+
+		.saySection .btnSay {
+			display: inline-block;
+			padding: 0 20px;
+			cursor: pointer;
+		}
+
+		body {
+			overflow: hidden;
+			margin: 0 auto;
+			background: url('img/16.jpg') no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
+		}
+
+		.snowfall-flakes:before {
+			content: "";
+			/*绝对定位*/
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 10px;
+			height: 16px;
+			transform: rotate(-45deg);
+			background-color: red;
+			border-radius: 5px 5px 1px 1px;
+		}
+
+		.snowfall-flakes:after {
+			content: "";
+			/*激活伪元素的必要因素*/
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 10px;
+			height: 16px;
+			transform: translateX(4.3px) rotate(45deg);
+			background-color: red;
+			border-radius: 5px 5px 1px 1px;
+		}
+	</style>
 
 </head>
 
 <body>
+	<div class="wrap">
+		<h1>
+			<span class="word"></span>
+			<span class="typed-cursor">|</span> ！
+		</h1>
 
-<div class="wrap"></div>
-<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-<!-- <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script> -->
-<script type="text/javascript" src="js/snowfall.jquery.min.js"></script>
-<script type="text/javascript">
-    $(document).snowfall({ flakeCount: 100, maxSpeed: 5 });
-</script>
+	</div>
+	<script src="./js/jquery-1.12.4.js"></script>
+	<script>
+
+		var timeID = null;
+		function dazi(text) {
+			//0 先清除以前的定时器，以本次为准
+			clearInterval(timeID);
+			//1.声明空字符串逐个拼接字符
+			var str = '';
+			//2.开启定时器开始打字
+			timeID = setInterval(function () {
+				//2.1 拼接
+				str += text[str.length];
+				//2.2 设置文字
+				$('.word').text(str);
+				//2.3 光标特效
+				$('.typed-cursor').fadeIn(250).fadeOut(250);
+				if (str.length == text.length) {//打完了清除定时器
+					//动画结束
+					clearInterval(timeID);
+				}
+			}, 500);
+		};
+
+		$('.btnSay').click(function () {
+			//1.开始打字
+			dazi($('.txtSay').val());
+			//2.清空文本
+			$('.txtSay').val('')
+		});
+
+		dazi('前端41期我爱你们');
+	</script>
+	<div class="wrap"></div>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script> -->
+	<script type="text/javascript" src="js/snowfall.jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).snowfall({ flakeCount: 100, maxSpeed: 5 });
+	</script>
 
 </body>
+
 </html>
