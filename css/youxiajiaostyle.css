@@ -1,0 +1,60 @@
+html,
+body {
+  height: 100%;
+  /* //background: #ffe2ea; */
+  overflow: hidden;
+  padding:0;
+  margin:0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/*  ��Ҫ��ʽ */
+.like {
+  margin-top: -38px;
+  position: absolute;
+  bottom: -77px;
+  right: -90px;
+}
+.like .heart {
+  position: absolute;
+  top: -10px;
+  left: -11px;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  display: none;
+}
+.like .line {
+  fill: none;
+}
+.like .second {
+  fill: #c50000;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 53% 61% 0px;
+          transform-origin: 53% 61% 0px;
+}
+.like .main {
+  stroke: #c50000;
+  stroke-width: 5px;
+  fill: #fff;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+.like svg {
+  transition: all .2s ease-in-out;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+  cursor: pointer;
+}
