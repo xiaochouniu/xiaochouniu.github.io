@@ -5,4 +5,8 @@ $('.next').on({click:function () {
     $(this).hide();
     $('.nexttwo').show();
     $('#abiaoqian').show()
+
 }})
+// $('.nexttwo').click(function(){
+//     window.location.assign ="http://www.baidu.com";
+// });

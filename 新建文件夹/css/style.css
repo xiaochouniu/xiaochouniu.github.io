@@ -102,7 +102,7 @@ body {
 
 .drop {
   position: fixed;
-  bottom: 20px;
+  bottom: 15%;
   left: calc(50% - 45px);
   width: 90px;
   height: 90px;
