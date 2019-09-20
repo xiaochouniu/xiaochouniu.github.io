@@ -86,6 +86,13 @@
 			background-color: red;
 			border-radius: 5px 5px 1px 1px;
 		}
+		#love {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			font-size: 160px;
+			color: red;
+		}
 	</style>
 
 </head>
@@ -94,10 +101,16 @@
 	<div class="wrap">
 		<h1>
 			<span class="word"></span>
-			<span class="typed-cursor">|</span> ！
+			<span class="typed-cursor">|</span> 
 		</h1>
 
 	</div>
+	<a href="./index.html">
+			<div id="love" >
+					❤
+				</div>
+
+	</a>
 	<script src="./js/jquery-1.12.4.js"></script>
 	<script>
 
@@ -119,7 +132,7 @@
 					//动画结束
 					clearInterval(timeID);
 				}
-			}, 500);
+			}, 300);
 		};
 
 		$('.btnSay').click(function () {
@@ -129,7 +142,7 @@
 			$('.txtSay').val('')
 		});
 
-		dazi('表白');
+		dazi('玖儿,我喜欢你.喜欢你的单纯,可爱,还有那份率真.真的很想和你一直一直的走下去,你一直都在说:还有很久呢.但是和你在一起的每一天,都过的那么快,所以到我说的那天也不会很久了.遇见你就算花光了我的所有运气,我都觉得很快乐.玖儿.我喜欢你.想和你一直在一起的那种喜欢');
 	</script>
 	<div class="wrap"></div>
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
@@ -138,7 +151,6 @@
 	<script type="text/javascript">
 		$(document).snowfall({ flakeCount: 100, maxSpeed: 5 });
 	</script>
-
 </body>
 
 </html>
